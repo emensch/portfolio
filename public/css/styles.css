@@ -368,7 +368,7 @@ th {
   padding: 0; }
 
 body {
-  background-color: #1F282D;
+  background-color: #00000C;
   font-family: Raleway, sans-serif;
   color: #DBE8D4; }
 
@@ -427,6 +427,6 @@ ul.links {
       ul.links li a i {
         display: inline-block;
         vertical-align: middle;
-        color: #1F282D; }
+        color: #00000C; }
     ul.links li a:hover {
       background-color: #b1cda2; }
