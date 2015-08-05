@@ -6,6 +6,7 @@ var gulp = require('gulp'),
 	rename = require('gulp-rename'),
 	concat = require('gulp-concat'),
 	jade = require('gulp-jade'),
+	gutil = require('gulp-util'),
 	del = require('del');
 
 gulp.task('styles', function () {
@@ -20,11 +21,8 @@ gulp.task('styles', function () {
 
 gulp.task('jade', function () {
 	gulp.src('assets/index.jade')
-		.pipe(jade({ pretty: true }))
+		.pipe(jade({ pretty: true }).on('error', gutil.log))
 		.pipe(gulp.dest('public'));
-	gulp.src('assets/partials/*.jade')
-		.pipe(jade({ pretty: true }))
-		.pipe(gulp.dest('public/partials')); 
 });
 
 gulp.task('scripts', function () {
@@ -32,16 +30,13 @@ gulp.task('scripts', function () {
 		.pipe(concat('app.js'))
 		.pipe(gulp.dest('public/js'))
 		.pipe(rename({ suffix: '.min' }))
-		.pipe(uglify())
+		.pipe(uglify().on('error', gutil.log))
 		.pipe(gulp.dest('public/js'));
 });
 
 gulp.task('watch', function () {
 	gulp.watch('assets/scss/*.scss', ['styles']);
-	gulp.watch([
-			'assets/partials/*.jade', 
-			'assets/*.jade', 
-		], ['jade']);
+	gulp.watch('assets/*.jade', ['jade']);
 	gulp.watch('assets/js/*.js', ['scripts']);
 });
 
@@ -49,8 +44,7 @@ gulp.task('clean', function (cb) {
 	del([
 			'public/js/*', 
 			'public/css/*', 
-			'public/*', 
-			'public/partials/*'
+			'public/*'
 		], cb);
 });
 
