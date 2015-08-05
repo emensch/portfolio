@@ -20,7 +20,7 @@ gulp.task('styles', function () {
 
 gulp.task('jade', function () {
 	gulp.src('assets/index.jade')
-		.pipe(jade({ pretty: true }).on('error', jade.logError))
+		.pipe(jade({ pretty: true }))
 		.pipe(gulp.dest('public'));
 	gulp.src('assets/partials/*.jade')
 		.pipe(jade({ pretty: true }))
