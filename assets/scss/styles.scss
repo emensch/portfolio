@@ -1,0 +1,35 @@
+@import 'normalize';
+
+body {
+	background-color: #1F282D;
+	font-family: Raleway;
+	color: #DBE8D4;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+
+}
+
+canvas {
+	position: absolute;
+}
+
+.title-container {
+	text-align: center;
+
+	h1 {
+		font-size: 50px;
+		font-weight: 300;
+		letter-spacing: 15px;
+	}
+
+	h2 {
+		font-size: 16px;
+		font-weight: 100;
+		letter-spacing: 6px;
+	}
+}
