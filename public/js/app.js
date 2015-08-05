@@ -175,8 +175,12 @@
             newY = s.y+s.speed;
 
             if(newY > height) {
-                s.y = 0;
-                s.x = Math.floor(Math.random() * width);
+                if(newY-height > 1) { // Any large overflow is probably a resize - remove star
+                    starfield.splice(i, 1);
+                } else { // Otherwise, wrap
+                    s.y = 0;
+                    s.x = Math.floor(Math.random() * width);
+                }
             } else {
                 s.y = newY;
             }
