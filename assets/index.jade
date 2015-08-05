@@ -2,6 +2,7 @@ doctype html
 html(lang='en')
   head
     title Eli Mensch // Portfolio
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', rel='stylesheet')
     link(href='css/styles.min.css', rel='stylesheet')
   body
     canvas#canvas
@@ -11,4 +12,17 @@ html(lang='en')
           | ELI MENSCH
         h2
           | coming soon
-    script(type="text/javascript", src="js/app.js")
+      ul.links
+        li
+          a(href='https://www.facebook.com/eli.mensch')
+            i.fa.fa-facebook
+        li
+          a(href='https://www.linkedin.com/pub/eli-mensch/b9/5/3')
+            i.fa.fa-linkedin
+        li
+          a(href='https://github.com/emensch')
+            i.fa.fa-github-alt
+        li
+          a(href='mailto:eli.mensch@gmail.com')
+            i.fa.fa-envelope
+    script(type="text/javascript", src="js/app.min.js")

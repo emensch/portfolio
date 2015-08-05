@@ -369,14 +369,19 @@ th {
 
 body {
   background-color: #1F282D;
-  font-family: Raleway;
+  font-family: Raleway, sans-serif;
   color: #DBE8D4; }
 
-.wrapper {
+div.wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
@@ -388,15 +393,40 @@ body {
   height: 100vh; }
 
 canvas {
-  position: absolute; }
+  position: absolute;
+  z-index: -1; }
 
-.title-container {
+div.title-container {
   text-align: center; }
-  .title-container h1 {
+  div.title-container h1 {
     font-size: 50px;
     font-weight: 300;
-    letter-spacing: 15px; }
-  .title-container h2 {
+    letter-spacing: 15px;
+    margin-bottom: 18px; }
+  div.title-container h2 {
     font-size: 16px;
     font-weight: 100;
     letter-spacing: 6px; }
+
+ul.links {
+  list-style: none;
+  padding: 0px;
+  font-size: 22px; }
+  ul.links li {
+    display: inline;
+    margin: 0.08em; }
+    ul.links li a {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      background-color: #DBE8D4;
+      text-align: center;
+      -webkit-transition: background-color 0.3s ease;
+              transition: background-color 0.3s ease; }
+      ul.links li a i {
+        display: inline-block;
+        vertical-align: middle;
+        color: #1F282D; }
+    ul.links li a:hover {
+      background-color: #b1cda2; }

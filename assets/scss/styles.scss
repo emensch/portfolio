@@ -1,13 +1,18 @@
 @import 'normalize';
 
+$font-stack: Raleway, sans-serif;
+$bg-color: #1F282D;
+$font-color: #DBE8D4;
+
 body {
-	background-color: #1F282D;
-	font-family: Raleway;
-	color: #DBE8D4;
+	background-color: $bg-color;
+	font-family: $font-stack;
+	color: $font-color;
 }
 
-.wrapper {
+div.wrapper {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
@@ -16,20 +21,54 @@ body {
 
 canvas {
 	position: absolute;
+	z-index: -1;
 }
 
-.title-container {
+div.title-container {
 	text-align: center;
 
 	h1 {
 		font-size: 50px;
 		font-weight: 300;
 		letter-spacing: 15px;
+		margin-bottom: 18px;
 	}
 
 	h2 {
 		font-size: 16px;
 		font-weight: 100;
 		letter-spacing: 6px;
+	}
+}
+
+ul.links {
+	list-style: none;
+	padding: 0px;
+	font-size: 22px;
+
+	li {
+		display: inline;
+		margin: 0.08em;
+
+		a {
+			display: inline-block;
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 50%;
+			background-color: $font-color;
+			text-align: center;
+
+			transition: background-color 0.3s ease;
+
+			i {
+				display: inline-block;
+				vertical-align: middle;
+				color: $bg-color;
+			}
+		}
+
+		a:hover {
+			background-color: darken($font-color, 15%);
+		}
 	}
 }
