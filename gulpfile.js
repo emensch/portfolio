@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 	del = require('del');
 
 gulp.task('styles', function () {
-	gulp.src('assets/scss/styles.scss')
+	gulp.src('assets/sass/styles.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer('last 2 version'))
 		.pipe(gulp.dest('public/css'))

@@ -68,7 +68,7 @@ ul.links {
 		}
 
 		a:hover {
-			background-color: darken($font-color, 15%);
+			background-color: lighten($font-color, 20%);
 		}
 	}
 }
